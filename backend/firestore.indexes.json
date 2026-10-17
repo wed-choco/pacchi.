@@ -1,0 +1,7 @@
+{
+  "indexes": [
+    { "collectionGroup": "pacchiGifts", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "recipientId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "pacchiMail", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "recipientId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] }
+  ],
+  "fieldOverrides": []
+}

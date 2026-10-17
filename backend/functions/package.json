@@ -1,0 +1,9 @@
+{
+  "name": "pacchi-friendship-functions",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "22" },
+  "main": "index.js",
+  "scripts": { "test": "node --experimental-test-module-mocks --test", "check": "node --check index.js && node --check policy.js" },
+  "dependencies": { "firebase-admin": "^13.0.0", "firebase-functions": "^6.0.0" }
+}

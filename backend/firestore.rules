@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Merge into the host app's rules. All Pacchi writes/reads go through authenticated
+    // callable functions, where accepted friendship + ownership are checked again.
+    match /pacchiPrivate/{document=**} { allow read, write: if false; }
+    match /pacchiGifts/{document=**} { allow read, write: if false; }
+    match /pacchiMomentPhotos/{document=**} { allow read, write: if false; }
+    match /pacchiMail/{document=**} { allow read, write: if false; }
+    match /pacchiPhones/{document=**} { allow read, write: if false; }
+    match /__pacchi_unconfigured_messages/{document=**} { allow read, write: if false; }
+  }
+}

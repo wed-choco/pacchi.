@@ -1,0 +1,14 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Reserved private upload namespace; this version keeps photos on the device.
+    match /pacchiPrivate/{ownerId}/{fileId} {
+      allow read: if request.auth != null && request.auth.uid == ownerId;
+      allow create, update: if request.auth != null && request.auth.uid == ownerId
+                           && request.resource.size < 5 * 1024 * 1024
+                           && request.resource.contentType.matches('image/(jpeg|png)');
+      allow delete: if request.auth != null && request.auth.uid == ownerId;
+    }
+    match /pacchiPublic/{path=**} { allow read, write: if false; }
+  }
+}
