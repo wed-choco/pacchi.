@@ -63,3 +63,4 @@ Firebase・友達・メッセージ・カメラ・音楽は開始時点で未実
 Swiftのチェックはアプリソース（MyApp.swiftを除く）と `Tests/MemoryFeatureChecks.swift` を `swiftc -parse-as-library -swift-version 5 -default-isolation MainActor` で実行できます。サーバーはNode 22で `cd backend/functions` → `npm ci` → `npm test`。テスト用の架空データはアプリには同梱していません。
 # pacchi.
 # pacchi.
+# pacchi.
