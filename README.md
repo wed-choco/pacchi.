@@ -1,3 +1,19 @@
+# Pacchi. — Phase 1
+
+新しい起動画面は、SwiftUIの図形とグラデーションで描くピンクの折りたたみ電話です。画面またはOKを押すと5項目のメニューが開き、数字1〜5でも選択できます。My Phone / Friends / Memories / Profileのタブ、実時刻、キーの触覚、任意の効果音、Reduce Motion対応を追加しました。Profileの音設定は端末内に保存されます。
+
+- Xcodeで `pacchi..xcodeproj` を開き、`pacchi.` スキームを実行。Swift 6、iOS 17以上。
+- 新しいホーム: `pacchi./PacchiHome.swift`。ナビゲーションと触覚: `pacchi./PacchiHomeModel.swift`。
+- Messages / Memories / Camera / Decorateの案内から既存の電話ツールに進めます。既存の保存形式は変更していません。
+- FriendsはPhase 1の案内画面です。新しいサンプル会話・訪問は未実装。SwiftDataへの移行と新しいカスタマイズ機能はPhase 2以降で実装します。
+- 検証: Xcode 27.1、Swift 6、arm64 iOS SimulatorでDebugビルド成功。iOS 27シミュレータで起動とホーム表示を確認。実機の触覚・消音スイッチ、VoiceOver、iOS 17実行時の操作確認は未実施。
+
+```sh
+xcodebuild -project 'pacchi..xcodeproj' -scheme 'pacchi.' -sdk iphonesimulator -configuration Debug -derivedDataPath /tmp/pacchi-phase1-build CODE_SIGNING_ALLOWED=NO ARCHS=arm64 build
+```
+
+以下は従来の電話ツールの説明です。
+
 # pacchi.
 
 SwiftUIで動く、ピンクのストレート型ガラケー。Xcodeで `pacchi..xcodeproj` を開き、`pacchi.` ターゲットを実行してください。既存の本体・アンテナ・液晶サイズと色・物理キー・メモ・効果音を維持しています。

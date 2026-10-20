@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct StickerSilhouette: Shape {
+nonisolated struct StickerSilhouette: Shape {
     let kind: StickerShape
     func path(in rect: CGRect) -> Path {
         var path = Path()
